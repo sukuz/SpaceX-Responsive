@@ -1,0 +1,175 @@
+body {
+  background-color: #e6e6e6;
+}
+
+.app-container {
+  margin: 0;
+  background-color: transparent;
+  display: flex;
+}
+.filterContainer {
+  justify-items: center;
+  height: 45%;
+  width: 15%;
+  border: none;
+  padding: 20px;
+  margin-right: 1%;
+  margin-left: 0.5%;
+  margin-top: 0.4%;
+  background-color: white;
+}
+.filterLabels {
+  display: inlineBlock;
+  border-bottom: 1px solid #888;
+}
+.buttonstyle {
+  background: #c1f0c1;
+  border: none;
+  border-radius: 3px;
+  margin: 10px;
+  padding: 5px;
+}
+
+.activeButton {
+  background: #009900;
+  border-radius: 3px;
+  border: none;
+  margin: 10px;
+  padding: 5px;
+}
+.launchView {
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  row-gap: 0.1%;
+  column-gap: 0.5%;
+  margin-top: 0.4%;
+}
+
+.eachLaunch {
+  background-color: white;
+  color: black;
+  padding: 5%;
+  height: 350px;
+}
+.imageContainer {
+  padding: 10px;
+  background-color: #e6e6e6;
+  align-content: center;
+}
+.launchImage {
+  height: 110px;
+  width: fit;
+  padding: 25%;
+}
+
+@media (max-width: 700px) {
+  .launchView {
+    display: grid;
+    grid-template-columns: repeat(1, 2fr);
+    row-gap: 0.1%;
+    column-gap: 0.5%;
+    margin-top: 0.4%;
+  }
+  .app-container {
+    margin: 0;
+    background-color: transparent;
+    display: block;
+  }
+  .filterContainer {
+    justify-items: center;
+    height: fit-content;
+    width: fit-content;
+    border: none;
+    padding: 20px;
+    margin-right: 1%;
+    margin-left: 0.5%;
+    margin-top: 0.4%;
+    background-color: white;
+  }
+  .buttonstyle {
+    background: #c1f0c1;
+    border: none;
+    border-radius: 5px;
+    margin: 7%;
+    padding: 5px;
+    width: 35%;
+  }
+  .activeButton {
+    background: #009900;
+    border-radius: 5px;
+    border: none;
+    margin: 7%;
+    width: 35%;
+    padding: 5px;
+  }
+  .eachLaunch {
+    background-color: white;
+    color: black;
+    padding: 5%;
+    height: 375px;
+  }
+  .imageContainer {
+    padding: 10px;
+    background-color: #e6e6e6;
+  }
+  .launchImage {
+    height: 150px;
+    width: fit;
+    padding: 10%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media (min-width: 701px) and (max-width: 1024px) {
+  .filterContainer {
+    justify-items: center;
+    height: fit-content;
+    width: 17%;
+    border: none;
+    padding: 20px;
+    margin-right: 1%;
+    margin-left: 0.5%;
+    margin-top: 0.4%;
+    background-color: white;
+  }
+  .launchView {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    row-gap: 0.1%;
+    column-gap: 5%;
+    margin-top: 0.4%;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .filterContainer {
+    justify-items: center;
+    height: fit-content;
+    width: 17%;
+    border: none;
+    padding: 20px;
+    margin-right: 1%;
+    margin-left: 0.5%;
+    margin-top: 0.4%;
+    background-color: white;
+  }
+
+  .launchView {
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    row-gap: 0.1%;
+    column-gap: 0.5%;
+    margin-top: 0.4%;
+  }
+}
+
+@media (min-width: 1441px) {
+  body {
+    max-width: 1440px;
+    margin: auto;
+  }
+}
+
+/* button:focus {
+  outline: 0;
+} */
