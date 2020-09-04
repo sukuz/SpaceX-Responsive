@@ -10,13 +10,11 @@ function App() {
     <Provider store={store}>
       <>
         <header>
-          <h1 style={{ marginTop: "0%", marginLeft: "1%", marginBottom: "0%" }}>
-            SpaceX Launch Programs
-          </h1>
+          <h1>SpaceX Launch Programs</h1>
         </header>
-        <div className="app-container">
+        <main>
           <AppContainer />
-        </div>
+        </main>
         <footer>Developed by: Sushmita Maity</footer>
       </>
     </Provider>
