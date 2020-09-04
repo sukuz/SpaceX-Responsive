@@ -8,67 +8,72 @@ body {
   display: flex;
 }
 .filterContainer {
-  justify-items: center;
+  display: block;
   height: 45%;
-  width: 15%;
+  min-width: 15%;
   border: none;
-  padding: 20px;
+  padding: 10px;
   margin-right: 1%;
   margin-left: 0.5%;
   margin-top: 0.4%;
   background-color: white;
 }
 .filterLabels {
-  display: inlineBlock;
+  display: inline-block;
   border-bottom: 1px solid #888;
+}
+.btn-container {
+  display: grid;
+  grid-template-columns: repeat(2, 0.5fr);
 }
 .buttonstyle {
   background: #c1f0c1;
   border: none;
   border-radius: 3px;
-  margin: 10px;
+  margin: 5px;
   padding: 5px;
+  text-transform: capitalize;
 }
 
 .activeButton {
   background: #009900;
   border-radius: 3px;
   border: none;
-  margin: 10px;
+  margin: 5px;
   padding: 5px;
+  text-transform: capitalize;
 }
 .launchView {
   display: grid;
-  grid-template-columns: repeat(4, 2fr);
+  width: 85%;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: min-content;
   row-gap: 0.1%;
   column-gap: 0.5%;
-  margin-top: 0.4%;
 }
 
 .eachLaunch {
   background-color: white;
-  color: black;
-  padding: 5%;
-  height: 350px;
+  padding: 7%;
 }
 .imageContainer {
-  padding: 10px;
   background-color: #e6e6e6;
-  align-content: center;
 }
 .launchImage {
-  height: 110px;
-  width: fit;
-  padding: 25%;
+  width: 100%;
+  max-height: 250px;
 }
-
+.cardDetails {
+  height: max-content;
+}
 @media (max-width: 700px) {
   .launchView {
     display: grid;
+    width: inherit;
     grid-template-columns: repeat(1, 2fr);
-    row-gap: 0.1%;
-    column-gap: 0.5%;
-    margin-top: 0.4%;
+    grid-template-rows: min-content;
+    row-gap: 0.05%;
+    column-gap: 0.4%;
   }
   .app-container {
     margin: 0;
@@ -78,7 +83,7 @@ body {
   .filterContainer {
     justify-items: center;
     height: fit-content;
-    width: fit-content;
+    width: inherit;
     border: none;
     padding: 20px;
     margin-right: 1%;
@@ -86,39 +91,34 @@ body {
     margin-top: 0.4%;
     background-color: white;
   }
+  .btn-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+  }
   .buttonstyle {
     background: #c1f0c1;
     border: none;
     border-radius: 5px;
     margin: 7%;
     padding: 5px;
-    width: 35%;
+    width: 60%;
+    text-transform: capitalize;
   }
   .activeButton {
     background: #009900;
     border-radius: 5px;
     border: none;
     margin: 7%;
-    width: 35%;
+    width: 60%;
     padding: 5px;
+    text-transform: capitalize;
   }
   .eachLaunch {
     background-color: white;
     color: black;
     padding: 5%;
     height: 375px;
-  }
-  .imageContainer {
-    padding: 10px;
-    background-color: #e6e6e6;
-  }
-  .launchImage {
-    height: 150px;
-    width: fit;
-    padding: 10%;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
   }
 }
 @media (min-width: 701px) and (max-width: 1024px) {
@@ -136,9 +136,9 @@ body {
   .launchView {
     display: grid;
     grid-template-columns: repeat(2, 2fr);
-    row-gap: 0.1%;
-    column-gap: 5%;
-    margin-top: 0.4%;
+    grid-template-rows: min-content;
+    row-gap: 0.05%;
+    column-gap: 1%;
   }
 }
 @media (min-width: 1024px) and (max-width: 1440px) {
@@ -157,6 +157,7 @@ body {
   .launchView {
     display: grid;
     grid-template-columns: repeat(4, 2fr);
+    grid-template-rows: min-content;
     row-gap: 0.1%;
     column-gap: 0.5%;
     margin-top: 0.4%;
