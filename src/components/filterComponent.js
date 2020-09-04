@@ -18,78 +18,91 @@ export default function FilterComponent({ filter, filterAction }) {
     2019,
     2020,
   ];
+
+  const yearElements = yearArray.map((year) => (
+    <button
+      className={filter.year === year ? "activeButton" : "buttonstyle"}
+      onClick={() => {
+        filterAction({
+          ...filter,
+          year: filter.year !== year ? year : "",
+        });
+      }}
+    >
+      {year}
+    </button>
+  ));
+
+  const ButtonComponent = ({ filter, filterAction, btn, mode }) => (
+    <button
+      className={filter[`${mode}`] === btn ? "activeButton" : "buttonstyle"}
+      onClick={() => {
+        return mode === "launch"
+          ? filterAction({
+              ...filter,
+              launch: filter.launch !== btn ? btn : "",
+            })
+          : filterAction({
+              ...filter,
+              land: filter.land !== btn ? btn : "",
+            });
+      }}
+    >
+      {btn}
+    </button>
+  );
+
+  const LaunchContainer = () => (
+    <div className="btn-container">
+      <ButtonComponent
+        filter={filter}
+        filterAction={filterAction}
+        btn="true"
+        mode="launch"
+      />
+      <ButtonComponent
+        filter={filter}
+        filterAction={filterAction}
+        btn="false"
+        mode="launch"
+      />
+    </div>
+  );
+
+  const LandingContainer = () => (
+    <div className="btn-container">
+      <ButtonComponent
+        filter={filter}
+        filterAction={filterAction}
+        btn="true"
+        mode="land"
+      />
+      <ButtonComponent
+        filter={filter}
+        filterAction={filterAction}
+        btn="false"
+        mode="land"
+      />
+    </div>
+  );
+
   return (
     <div className="filterContainer">
       <div style={{ fontWeight: "bold" }}>Filters</div>
       <div>
         <div className="filterLabels">Launch Year</div>
-
         <br />
-        {yearArray.map((year) => (
-          <button
-            className={filter.year === year ? "activeButton" : "buttonstyle"}
-            onClick={() => {
-              filterAction({
-                ...filter,
-                year: filter.year !== year ? year : "",
-              });
-            }}
-          >
-            {year}
-          </button>
-        ))}
+        <div className="btn-container">{yearElements}</div>
       </div>
       <div>
         <div className="filterLabels">Successful Launch</div>
         <br />
-        <button
-          className={filter.launch === "true" ? "activeButton" : "buttonstyle"}
-          onClick={() =>
-            filterAction({
-              ...filter,
-              launch: filter.launch !== "true" ? "true" : "",
-            })
-          }
-        >
-          True
-        </button>
-        <button
-          className={filter.launch === "false" ? "activeButton" : "buttonstyle"}
-          onClick={() =>
-            filterAction({
-              ...filter,
-              launch: filter.launch !== "false" ? "false" : "",
-            })
-          }
-        >
-          False
-        </button>
+        <LaunchContainer />
       </div>
       <div>
         <div className="filterLabels">Successful Landing</div>
         <br />
-        <button
-          className={filter.land === "true" ? "activeButton" : "buttonstyle"}
-          onClick={() =>
-            filterAction({
-              ...filter,
-              land: filter.land !== "true" ? "true" : "",
-            })
-          }
-        >
-          True
-        </button>
-        <button
-          className={filter.land === "false" ? "activeButton" : "buttonstyle"}
-          onClick={() =>
-            filterAction({
-              ...filter,
-              land: filter.land !== "false" ? "false" : "",
-            })
-          }
-        >
-          False
-        </button>
+        <LandingContainer />
       </div>
     </div>
   );
