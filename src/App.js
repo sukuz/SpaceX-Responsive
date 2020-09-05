@@ -5,7 +5,6 @@ import { Provider } from "react-redux";
 import store from "./store";
 
 function App() {
-  const name = "name";
   return (
     <Provider store={store}>
       <>
